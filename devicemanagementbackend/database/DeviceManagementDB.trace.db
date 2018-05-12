@@ -1,0 +1,3 @@
+2018-05-12 12:25:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CUSTOMER" not found; SQL statement:
+INSERT INTO PUBLIC.CUSTOMER( USER_NAME, NAME, TELEPHONE, RESIDENCE)  VALUES (?,?,?,?) [42102-197]

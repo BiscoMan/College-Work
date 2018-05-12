@@ -1,0 +1,20 @@
+Parte importante:
+O front-end deve possibilitar ao utilizador, no mínimo: 
+Inscrever-se; 
+Associar dispositivo; 
+Operar dispositivo; 
+Consultar dispositivos associados. 
+ 
+2. Implemente as páginas do Front-end do fabricante. 
+O front-end deve possibilitar ao fabricante, no mínimo: 
+Criar a Base de Dados; 
+Consultar historial de um cliente; 
+Consultar historial de um dispositivo. 
+
+Esta parte são cenas extras:
+Crie um Web Service, que emula um pedido para operar um determinado dispositivo. 
+Por exemplo, quando um utilizador pretende ligar um determinado dispositivo, este serviço deve ser chamado, pois é responsável por posteriormente operar o hardware, 
+neste caso o dispositivo (possível integração com o primeiro trabalho). 
+ 
+2. Outras funcionalidades extra não definidas tais como autenticação 
+(diferenciação das páginas mostradas a um consumidor e a um fabricante), serviços adicionais (e respetivas alterações na DB), etc. 
