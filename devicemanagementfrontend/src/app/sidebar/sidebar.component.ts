@@ -12,15 +12,12 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     // Add route info for the CustomerPage (suggestion: Use the ti-server icon).
     /*add your code here*/
-    { path: 'testpage', title: 'Insert Customer',  icon: 'ti-server', class: '' },
-    { path: 'device', title: 'Insert Device', icon: 'ti-server', class: ''},
-    { path: 'dashboard', title: 'Dashboard',  icon: 'ti-panel', class: '' },
-    { path: 'user', title: 'User Profile',  icon: 'ti-user', class: '' },
-    { path: 'table', title: 'Table List',  icon: 'ti-view-list-alt', class: '' },
-    { path: 'typography', title: 'Typography',  icon: 'ti-text', class: '' },
-    { path: 'icons', title: 'Icons',  icon: 'ti-pencil-alt2', class: '' },
-    { path: 'maps', title: 'Maps',  icon: 'ti-map', class: '' },
-    { path: 'notifications', title: 'Notifications',  icon: 'ti-bell', class: '' },
+    { path: 'createdb', title: 'Create Database', icon: 'ti-server', class: ''},
+    { path: 'customerlist', title: 'Customer History ', icon: 'ti-view-list-alt', class: ''},
+    { path: 'testpage', title: 'Insert Customer', icon: 'ti-user', class: '' },
+    { path: 'device', title: 'Insert Device', icon: 'ti-pencil-alt2', class: ''},
+    { path: 'devicestate', title: 'Operate Device ', icon: 'ti-pencil-alt2', class: ''},
+    { path: 'getdevice', title: 'My Devices', icon: 'ti-view-list-alt', class: ' '},
 ];
 
 @Component({

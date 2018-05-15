@@ -15,8 +15,7 @@ import Datamodel.Device;
  * @author Gonçalo
  */
 public interface DeviceResource {
-    @Post
-    public boolean insertState(Device d);
+
     @Get
     public ArrayList<String> getDeviceStates(Device d);
 }

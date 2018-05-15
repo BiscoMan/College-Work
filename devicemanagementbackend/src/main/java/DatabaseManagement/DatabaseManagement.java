@@ -176,7 +176,7 @@ public class DatabaseManagement {
             preparedStatement.setInt(1, serialNumber);
             preparedStatement.setString(2, userName);
             preparedStatement.setString(3, model);
-            preparedStatement.setString(4, friendlyName);
+            preparedStatement.setString(4, friendlyName); 
             preparedStatement.setInt(5, deviceType);
             preparedStatement.execute();
             closeConnection();

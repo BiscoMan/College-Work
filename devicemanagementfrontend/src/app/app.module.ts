@@ -20,8 +20,16 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { TestpageModule} from './CustomerPage/testpage.module';
 import { TestpageService} from './CustomerPage/testpage.service';
-import { DeviceService} from '../DevicesPage/Device.service';
-import { DeviceModule} from '../DevicesPage/Device.module';
+import { DeviceService} from './DevicesPage/Device.service';
+import { DeviceModule} from './DevicesPage/Device.module';
+import { GetDevicesService } from './GetDevices/GetDevices.service';
+import { GetDevicesModule } from './GetDevices/GetDevices.module';
+import { CreatedbService } from './CreateDB/createdb.service';
+import { CreatedbModule } from './CreateDB/createdb.module';
+import { CustomerListService } from './CustomerList/customerlist.service';
+import { CustomerListModule } from './CustomerList/customerlist.module';
+import { DeviceStateService } from './DevicesStatePage/DeviceState.service';
+import { DeviceStateModule} from './DevicesStatePage/DeviceState.module';
 import {Http, HttpModule} from '@angular/http';
 
 @NgModule({
@@ -45,13 +53,17 @@ import {Http, HttpModule} from '@angular/http';
     FixedPluginModule,
     TestpageModule,
       DeviceModule,
+      GetDevicesModule,
+      CreatedbModule,
+      CustomerListModule,
+      DeviceStateModule,
     HttpModule,
 
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
 
   ],
   // Declare TestpageService as a provider.
-  providers: [TestpageService, DeviceService],
+  providers: [TestpageService, DeviceService, GetDevicesService, CreatedbService, CustomerListService, DeviceStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

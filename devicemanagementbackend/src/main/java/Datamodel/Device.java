@@ -13,6 +13,7 @@ public class Device {
 
     String model;
     String friendlyName;
+    String username;
     int deviceType;
     int serialNumber;
 
@@ -31,11 +32,19 @@ public class Device {
     public void setfriendlyName(String friendlyName) {
         this.friendlyName = friendlyName;
     }
+    
+    public void setusername(String username) {
+        this.username = username;
+    }
 
+    public String getusername() {
+        return username;
+    }
+    
     public int getdeviceType() {
         return deviceType;
     }
-    
+      
     public void setdeviceType(int deviceType){
         this.deviceType = deviceType;
     }

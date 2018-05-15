@@ -1,0 +1,41 @@
+<!--<button type="button" name="button" class="btn btn-info btn-fill btn-wd" (click)="onClickGetDevices()" >Get devices</button>-->
+<div class="container-fluid">
+    <form>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input name="input1" [(ngModel)]="Username" type="text" class="form-control border-input" placeholder="Username">
+                </div>
+            </div>
+        </div>
+    </form>
+    <button type="button" name="button" class="btn btn-info btn-fill btn-wd" (click)="onClickGetDevices()" >Get devices</button>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Devices</h4>
+                    <p class="category">Devices for {{Username}}</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th *ngFor="let cell of headerRow">{{ cell }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let device of devices">
+                            <td *ngFor="let cell of device">{{cell}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

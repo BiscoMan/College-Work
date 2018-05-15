@@ -16,9 +16,9 @@ import org.restlet.resource.Post;
  */
 public interface CustomerDeviceResource {
     @Post
-    public boolean AssociateDevice(Device d, Customer c);
+    public boolean AssociateDevice(Device d);
     
     @Get
-    public ArrayList<String> getMyDevices(Customer c);
+    public ArrayList<String> getMyDevices();
     
 }

@@ -26,22 +26,22 @@ public class CustomerDeviceServerResource extends ServerResource implements Cust
     }
     
     @Override
-    public boolean AssociateDevice(Device d, Customer c){
-        String username = c.getUserName();
+    public boolean AssociateDevice(Device d){
+        int serialNumber = d.getserialNumber();
+        String userName = d.getusername();
         String model = d.getModel();
         String friendlyName = d.getfriendlyName();
         int deviceType = d.getdeviceType();
-        int serialNumber = d.getserialNumber();
-        System.out.println(serialNumber);
-        boolean result = dbm.AssociateDevice(serialNumber, username, model, friendlyName, deviceType);
+        boolean result = dbm.AssociateDevice(serialNumber, userName, model, friendlyName, deviceType);
         return result;
     }
     
     @Override
-    public ArrayList<String> getMyDevices(Customer c){
-        String username = c.getUserName();
-        ArrayList<String> result = dbm.getMyDevices(username);
-        return result;
+    public ArrayList<String> getMyDevices(){
+        String Id = (String) (this.getRequest().getAttributes().get("username"));
+        ArrayList<String> CustomerDevices = new ArrayList<>();
+        CustomerDevices = dbm.getMyDevices(Id);
+        return CustomerDevices;
     }
     
 }

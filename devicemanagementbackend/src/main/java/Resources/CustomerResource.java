@@ -19,5 +19,5 @@ public interface CustomerResource {
     public boolean insertCustomer (Customer c);
     
     @Get
-    public ArrayList<String>  getCustomerstates (Customer c);
+    public ArrayList<String>  getCustomerstates ();
 }

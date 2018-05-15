@@ -29,22 +29,6 @@ public class DeviceServerResource extends ServerResource implements DeviceResour
     }
 
     @Override
-    public boolean insertState(Device d) {
-        boolean result;
-        try {
-            int serialNumber = d.getserialNumber();
-            int state = 1;
-            int error = 0;
-            int energyProduction = 1000;
-            result = dbm.insertState(serialNumber, state, error, energyProduction);
-            return result;
-        } catch (ParseException ex) {
-            Logger.getLogger(DeviceServerResource.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
-    }
-
-    @Override
     public ArrayList<String> getDeviceStates(Device d) {
         int serialNumber = d.getserialNumber();
         ArrayList<String> result = dbm.getDeviceStates(Integer.toString(serialNumber));

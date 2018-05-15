@@ -37,9 +37,10 @@ public class CustomerServerResource extends ServerResource implements CustomerRe
     }
 
     @Override
-    public ArrayList<String> getCustomerstates(Customer c) {
-        String userName = c.getUserName();
-        ArrayList<String> result = dbm.getCustomerStates(userName);
-        return result;
+    public ArrayList<String> getCustomerstates() {
+        String Id = (String) (this.getRequest().getAttributes().get("username"));
+        ArrayList<String> CustomerStates = new ArrayList<>();
+        CustomerStates = dbm.getCustomerStates(Id);
+        return CustomerStates;
     }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {log} from 'util';
 import {TestpageService} from './testpage.service';
-import {Customer} from 'Datamodel/Customer';
+import {Customer} from 'app/Datamodel/Customer';
 import {HttpClient} from '@angular/common/http';
 import {printLine} from 'tslint/lib/test/lines';
 
@@ -22,15 +22,7 @@ export class TestpageComponent {
     customer = new Customer();
 
     // Inject the TestpageService in the component's constructor
-    constructor(private testpage: TestpageService) {
-
-    }
-
-    onClickDB() {
-        this.testpage.createDB().subscribe(data => this.result = data);
-        console.log('Data base has been created.');
-        return this.result;
-    }
+    constructor(private testpage: TestpageService) {}
 
     onClickCustomer() {
         this.customer.userName = this.Username;

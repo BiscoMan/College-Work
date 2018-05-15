@@ -9,12 +9,16 @@ import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { TestpageComponent } from './CustomerPage/testpage.component';
-import { DeviceComponent } from '../DevicesPage/Device.component';
+import { DeviceComponent } from './DevicesPage/Device.component';
+import { GetDevicesComponent } from './GetDevices/GetDevices.component';
+import { CreatedbComponent } from './CreateDB/createdb.component';
+import { CustomerListComponent } from './CustomerList/customerlist.component';
+import { DeviceStateComponent} from './DevicesStatePage/DeviceState.component';
 
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'createdb',
         pathMatch: 'full',
     },
     {
@@ -59,5 +63,26 @@ export const AppRoutes: Routes = [
     {
         path: 'device',
         component: DeviceComponent
+    },
+
+    {
+        path: 'getdevice',
+        component: GetDevicesComponent
+    },
+
+
+    {
+        path: 'createdb',
+        component: CreatedbComponent
+    },
+
+    {
+        path: 'customerlist',
+        component: CustomerListComponent
+    },
+
+    {
+        path: 'devicestate',
+        component: DeviceStateComponent
     }
 ];

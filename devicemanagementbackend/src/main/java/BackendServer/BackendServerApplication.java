@@ -42,10 +42,13 @@ public class BackendServerApplication extends Application {
         //Service routes
         router.attach("/createdb/", DatabaseServerResource.class);
         router.attach("/customer/", CustomerServerResource.class);
+        router.attach("/customer/{username}", CustomerServerResource.class);
         router.attach("/device/", DeviceServerResource.class);
         router.attach("/customerdevice/", CustomerDeviceServerResource.class);
-        router.attach("/devicefriendlyname/", DeviceFriendlyNameServerResource.class);
-        router.attach("/devicestates/", DeviceStatesServerResource.class);
+        router.attach("/customerdevice/{username}", CustomerDeviceServerResource.class);
+        router.attach("/devicefriendlyname/", DeviceFriendlyNameServerResource.class);     
+        router.attach("/devicestate/", DeviceStatesServerResource.class);
+        router.attach("/devicestate/{serialNumber}", DeviceStatesServerResource.class);
         router.attach("/devicetype/", DeviceTypeServerResource.class);
         router.getContext().getAttributes().put("DBM", this.dbm);
 
