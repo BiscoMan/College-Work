@@ -1,0 +1,74 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>NewProfile</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-md-7">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Enter a new device</h4>
+                </div>
+                <div class="content">
+                    <form>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Serial Number</label>
+                                    <input name="input1" [(ngModel)]="device_serialNumber" type="number" class="form-control border-input" placeholder="Serial Number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Device Type</label>
+                                    <select [(ngModel)]="device_deviceType" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let device of deviceTypes" value="{{device.id}}">{{device.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Device Model</label>
+                                    <input name="input3" [(ngModel)]="device_model" type="text" class="form-control border-input" placeholder="Device Model">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Device Friendly Name</label>
+                                    <input name="input4" [(ngModel)]="device_friendlyName" type="text" class="form-control border-input" placeholder="Device Friendly Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Customer username</label>
+                                    <input name="input3" [(ngModel)]="device_username" type="text" class="form-control border-input" placeholder="Customer username">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-info btn-fill btn-wd" (click)="onClickDevice()">Associate Device</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
