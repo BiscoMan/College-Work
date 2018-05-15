@@ -1,3 +1,0 @@
-﻿  Dll_main.c
-c:\tmp_meu\dll_jni\dll_main.c(10): warning C4305: 'return': truncation from 'double' to 'jfloat'
-  Dll_JNI.vcxproj -> C:\tmp_meu\Dll_JNI\x64\Debug\Dll_JNI.dll
