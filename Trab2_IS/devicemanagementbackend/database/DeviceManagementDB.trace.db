@@ -1,3 +1,0 @@
-2018-05-15 00:17:48 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: Table "DEVICE" not found; SQL statement:
-SELECT SERIAL_NUMBER, FRIENDLY_NAME FROM PUBLIC.DEVICE WHERE USER_NAME = 'banana' [42102-197]
