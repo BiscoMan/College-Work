@@ -32,17 +32,18 @@ export class DeviceService {
                         .map(this.parseData);
         return aux;
     }
-    getDeviceTypes() {
+    getDeviceTypes(){
         const aux = this.http.get(this.APIEndpoint_DeviceType)
             .map(this.parseDeviceTypeResponse);
         console.log(aux);
         return aux;
     }
-    parseDeviceTypeResponse(response) {
+    parseDeviceTypeResponse(response){
         const parsedResponse = response.json();
         const deviceTypes = Array<Device_Type>();
 
-        for ( let i = 0; i < parsedResponse.length; i += 2) {
+        for ( let i = 0; i < parsedResponse.length; i += 2)
+        {
             const deviceType = new Device_Type();
             deviceType.id = parseInt(parsedResponse[i], 10 );
             deviceType.name = parsedResponse[i + 1];

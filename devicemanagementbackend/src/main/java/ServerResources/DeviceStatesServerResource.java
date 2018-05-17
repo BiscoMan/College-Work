@@ -29,27 +29,16 @@ public class DeviceStatesServerResource extends ServerResource implements Device
     }
 
     @Override
-    public boolean insertStates(String d) {
-        
-        
+    public boolean insertStates(Device_State d) {
         try {
-            String [] s = d.split(",");
-            String [] s1 = new String [4];
-            
-            for(int i = 0, k = 0; i < s.length; i++, k++){
-                String[] saux = s[i].split(":");
-                s1[k] = saux[1];
-            }
-            
-            int serialNumber = Integer.parseInt(s1[0]);
-            int state = Integer.parseInt(s1[1]);
-            int error = Integer.parseInt(s1[2]);
-            int energyProduction = Integer.parseInt(s1[3].substring(0,1));
-
+            int serialNumber = d.getSerialNumber();
+            int state = d.getState();
+            int error = d.getError();
+            int energyProduction = d.getEnergyProduction();
+            System.out.println(serialNumber);
             System.out.println(state);
             System.out.println(error);
             System.out.println(energyProduction);
-            
             boolean result = dbm.insertState(serialNumber, state, error, energyProduction);
             return result;
         } catch (ParseException ex) {

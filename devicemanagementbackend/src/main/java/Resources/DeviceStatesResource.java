@@ -17,7 +17,7 @@ import Datamodel.Device_State;
 public interface DeviceStatesResource {
 
     @Post
-    public boolean insertStates(String d);
+    public boolean insertStates(Device_State d);
     
     @Get
     public ArrayList<String> getStates();

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {log} from 'util';
 import {DeviceStateService} from './DeviceState.service';
-import {State} from 'app/Datamodel/state';
+import {Device_State} from 'app/Datamodel/Device_State';
 import {HttpClient} from '@angular/common/http';
 import {printLine} from 'tslint/lib/test/lines';
 
@@ -18,7 +18,7 @@ export class DeviceStateComponent {
     device_energyProduction;
     result;
 
-    device_db = new State();
+    device_db = new Device_State();
 
     // Inject the TestpageService in the component's constructor
     constructor(private devicestate: DeviceStateService) {

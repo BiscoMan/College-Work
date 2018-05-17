@@ -29,7 +29,7 @@ import { CreatedbModule } from './CreateDB/createdb.module';
 import { CustomerListService } from './CustomerList/customerlist.service';
 import { CustomerListModule } from './CustomerList/customerlist.module';
 import { DeviceStateService } from './DevicesStatePage/DeviceState.service';
-import { DeviceStateModule} from './DevicesStatePage/DeviceState.module';
+import { DeviceStateModule} from "./DevicesStatePage/DeviceState.module";
 import {Http, HttpModule} from '@angular/http';
 
 @NgModule({

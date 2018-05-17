@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {log} from 'util';
 import {TestpageService} from './testpage.service';
-import {Customer} from 'app/Datamodel/Customer';
+import {Customer} from './testpage.service';
 import {HttpClient} from '@angular/common/http';
 import {printLine} from 'tslint/lib/test/lines';
 
@@ -26,7 +26,13 @@ export class TestpageComponent {
 
     }
 
-    onClickCustomer() {
+    onClickDB() {
+        this.testpage.createDB().subscribe(data => this.result = data);
+        console.log('ola');
+        return this.result;
+    }
+
+    onClickCustomer(){
         this.customer.userName = this.Username;
         this.customer.name = this.name;
         this.customer.residence = this.residence;

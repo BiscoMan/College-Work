@@ -16,9 +16,9 @@ export class TestpageService {
     constructor(private http: Http) {}
 
     insertCustomer(Customer) {
-        const headers = new Headers();
+        let headers = new Headers();
         headers.append('Content-Type', 'application/json' );
-        headers.append('Access-Control-Allow-Origin', '*' );
+        headers.append('Acess-Control-Allow-Origin', '*' );
         Customer = JSON.stringify(Customer);
         const aux = this.http.post(this.APIEndpoint_Customer, Customer, {headers: headers})
                         .map(this.parseData);
