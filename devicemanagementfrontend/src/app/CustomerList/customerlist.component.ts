@@ -5,7 +5,7 @@ import { Customer } from 'app/Datamodel/Customer';
 import {HttpClient} from '@angular/common/http';
 import {printLine} from 'tslint/lib/test/lines';
 import {Device} from 'app/Datamodel/Device';
-import { Device_State } from 'app/Datamodel/Device_State';
+import { State } from 'app/Datamodel/state';
 import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({

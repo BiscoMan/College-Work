@@ -299,7 +299,7 @@ public class DatabaseManagement {
         closeConnection();
         return null;
     }
-
+    
     /*
      This method returns the states stored by all devices associated to the user
      Receives the userName

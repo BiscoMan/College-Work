@@ -12,10 +12,19 @@ import java.util.Date;
  * @author gonca
  */
 public class Device_State {
+    long time;
     int SerialNumber;
     int state;
     int error;
     int energyProduction;
+    
+    public long getTime(){
+        return time;
+    }
+   
+    public void setTime(long time){
+        this.time = time;
+    }
     
     public int getSerialNumber(){
         return SerialNumber;

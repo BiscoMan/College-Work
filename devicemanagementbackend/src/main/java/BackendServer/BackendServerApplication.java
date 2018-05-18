@@ -47,7 +47,7 @@ public class BackendServerApplication extends Application {
         router.attach("/customerdevice/", CustomerDeviceServerResource.class);
         router.attach("/customerdevice/{username}", CustomerDeviceServerResource.class);
         router.attach("/devicefriendlyname/", DeviceFriendlyNameServerResource.class);
-        router.attach("/devicestate/", DeviceStatesServerResource.class);
+        router.attach("/devicestates/", DeviceStatesServerResource.class);
         router.attach("/devicetype/", DeviceTypeServerResource.class);
         router.getContext().getAttributes().put("DBM", this.dbm);
 

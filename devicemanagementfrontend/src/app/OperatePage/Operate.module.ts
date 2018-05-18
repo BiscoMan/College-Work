@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { DeviceStateComponent } from './DeviceState.component';
+import {OperateComponent} from './Operate.component';
 
 @NgModule({
     imports: [ CommonModule, FormsModule ],
-    declarations: [ DeviceStateComponent ],
-    exports: [ DeviceStateComponent ],
+    declarations: [ OperateComponent ],
+    exports: [ OperateComponent ],
 })
 
-export class DeviceStateModule {}
+export class OperateModule {}

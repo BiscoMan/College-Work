@@ -22,9 +22,7 @@ export class TestpageComponent {
     customer = new Customer();
 
     // Inject the TestpageService in the component's constructor
-    constructor(private testpage: TestpageService) {
-
-    }
+    constructor(private testpage: TestpageService) {}
 
     onClickCustomer() {
         this.customer.userName = this.Username;
