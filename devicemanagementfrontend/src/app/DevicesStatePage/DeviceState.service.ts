@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DeviceStateService {
     // Instantiate the URL to the createDB endpoint in the backend server.
-    private APIEndpoint_DeviceState = 'http://localhost:8182/devicestates/';
+    private APIEndpoint_DeviceState = 'http://localhost:8182/device/';
     // Inject the http client into the service
     constructor(private http: Http) {}
     // Implement the createDB() method. This method should send an HTTP GET
@@ -29,10 +29,6 @@ export class DeviceStateService {
 
     // This method parses the result data to JSON
     private parseData(res: Response)  {
-        if(Response){
-            alert("Com sucesso");
-
-        }
         return res.json();
     }
 }

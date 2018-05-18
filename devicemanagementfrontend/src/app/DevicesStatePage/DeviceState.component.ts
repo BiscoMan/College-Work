@@ -31,6 +31,6 @@ export class DeviceStateComponent {
         this.device_db.error = this.device_error;
         this.device_db.energyProduction = this.device_energyProduction;
         console.log(this.device_db);
-        this.devicestate.OperateDevice(this.device_db).subscribe();
+        this.devicestate.OperateDevice(this.device_db).subscribe(result => console.log(result));
     }
 }

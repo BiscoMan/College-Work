@@ -5,27 +5,16 @@
  */
 package Datamodel;
 
-import java.util.Date;
-
 /**
  *
  * @author gonca
  */
-public class Device_State {
-    long time;
+public class state {
     int SerialNumber;
     int state;
     int error;
     int energyProduction;
-    
-    public long getTime(){
-        return time;
-    }
-   
-    public void setTime(long time){
-        this.time = time;
-    }
-    
+        
     public int getSerialNumber(){
         return SerialNumber;
     }
@@ -57,5 +46,4 @@ public class Device_State {
     public void setEnergyProduction(int energyProduction){
         this.energyProduction = energyProduction;
     }
-    
 }

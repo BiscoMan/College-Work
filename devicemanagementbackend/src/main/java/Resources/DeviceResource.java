@@ -8,7 +8,7 @@ package Resources;
 import java.util.ArrayList;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
-import Datamodel.Device;
+import Datamodel.state;
 
 /**
  *
@@ -16,7 +16,7 @@ import Datamodel.Device;
  */
 public interface DeviceResource {
     @Post
-    public boolean insertState(Device d);
+    public boolean insertState(String s);
     @Get
-    public ArrayList<String> getDeviceStates(Device d);
+    public ArrayList<String> getDeviceStates();
 }
