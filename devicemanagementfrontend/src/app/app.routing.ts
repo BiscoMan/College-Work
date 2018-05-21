@@ -14,6 +14,7 @@ import { GetDevicesComponent } from './GetDevices/GetDevices.component';
 import { CreatedbComponent } from './CreateDB/createdb.component';
 import { CustomerListComponent } from './CustomerList/customerlist.component';
 import { DeviceStateComponent} from './DevicesStatePage/DeviceState.component';
+import { DeviceListComponent} from './DeviceList/devicelist.component';
 
 export const AppRoutes: Routes = [
     {
@@ -84,5 +85,10 @@ export const AppRoutes: Routes = [
     {
         path: 'devicestate',
         component: DeviceStateComponent
+    },
+
+    {
+        path: 'devicelist',
+        component: DeviceListComponent
     }
 ];

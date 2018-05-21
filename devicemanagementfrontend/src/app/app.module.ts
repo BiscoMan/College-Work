@@ -28,6 +28,8 @@ import { CreatedbService } from './CreateDB/createdb.service';
 import { CreatedbModule } from './CreateDB/createdb.module';
 import { CustomerListService } from './CustomerList/customerlist.service';
 import { CustomerListModule } from './CustomerList/customerlist.module';
+import { DeviceListService } from './DeviceList/devicelist.service';
+import { DeviceListModule } from './DeviceList/devicelist.module';
 import { DeviceStateService } from './DevicesStatePage/DeviceState.service';
 import { DeviceStateModule} from './DevicesStatePage/DeviceState.module';
 import {Http, HttpModule} from '@angular/http';
@@ -57,13 +59,15 @@ import {Http, HttpModule} from '@angular/http';
       CreatedbModule,
       CustomerListModule,
       DeviceStateModule,
+      DeviceListModule,
     HttpModule,
 
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
 
   ],
   // Declare TestpageService as a provider.
-  providers: [TestpageService, DeviceService, GetDevicesService, CreatedbService, CustomerListService, DeviceStateService],
+  providers: [TestpageService, DeviceService, GetDevicesService, CreatedbService, CustomerListService,
+      DeviceStateService, DeviceListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

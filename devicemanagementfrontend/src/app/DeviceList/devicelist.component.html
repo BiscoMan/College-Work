@@ -5,21 +5,21 @@
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Username</label>
-                    <input name="input1" [(ngModel)]="Username" type="text" class="form-control border-input" placeholder="Username">
+                    <label>Serial Number</label>
+                    <input name="input1" [(ngModel)]="serialNumber" type="text" class="form-control border-input" placeholder="serialNumber">
                 </div>
             </div>
         </div>
     </form>
-    <button type="button" name="button" class="btn btn-info btn-fill btn-wd" (click)="onClickGetCustomerList()" >Get devices state</button>
+    <button type="button" name="button" class="btn btn-info btn-fill btn-wd" (click)="onClickGetDeviceList()" >Get devices history</button>
 </div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Devices State</h4>
-                    <p class="category">Devices State for {{Username}}</p>
+                    <h4 class="title">Devices History</h4>
+                    <p class="category">Devices History for {{serialNumber}}</p>
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-striped">
@@ -29,7 +29,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr *ngFor="let device of devices_state">
+                        <tr *ngFor="let device of devicesHistory">
                             <td *ngFor="let cell of device">{{cell}}</td>
                         </tr>
                         </tbody>

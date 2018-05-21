@@ -14,6 +14,7 @@ export const ROUTES: RouteInfo[] = [
     /*add your code here*/
     { path: 'createdb', title: 'Create Database', icon: 'ti-server', class: ''},
     { path: 'customerlist', title: 'Customer History ', icon: 'ti-view-list-alt', class: ''},
+    { path: 'devicelist', title: 'Device History ', icon: 'ti-view-list-alt', class: ''},
     { path: 'testpage', title: 'Insert Customer', icon: 'ti-user', class: '' },
     { path: 'device', title: 'Insert Device', icon: 'ti-pencil-alt2', class: ''},
     { path: 'devicestate', title: 'Operate Device ', icon: 'ti-pencil-alt2', class: ''},
@@ -31,7 +32,7 @@ export class SidebarComponent implements OnInit {
     ngOnInit() {
         this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
-    isNotMobileMenu(){
+    isNotMobileMenu() {
         if($(window).width() > 991){
             return false;
         }

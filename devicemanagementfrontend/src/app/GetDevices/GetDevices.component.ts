@@ -23,15 +23,14 @@ export class GetDevicesComponent {
     constructor(private getdevice: GetDevicesService) {
 
     }
-    onClickGetDevices(){
+    onClickGetDevices() {
         this.getdevice.getDevices(this.Username).map(this.parseDeviceResponse).subscribe(res => this.devices = res);
     }
 
-    parseDeviceResponse(response){
+    parseDeviceResponse(response) {
         const devices = Array<Array<String>>();
 
-       for ( let i = 0; i < response.length; i += 2)
-       {
+       for ( let i = 0; i < response.length; i += 2) {
            const device = [response[i], response[i + 1]];
            devices.push(device);
        }

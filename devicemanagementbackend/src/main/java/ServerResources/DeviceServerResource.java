@@ -30,21 +30,25 @@ public class DeviceServerResource extends ServerResource implements DeviceResour
 
     @Override
     public boolean insertState(String s) {
-        //System.out.println("DENTRO: " + s);
-        String[] splited = s.split(",");    
-        String[] splited_aux = new String[4];
-        boolean result=true;
-        for(int i=0,k=0; i<splited.length;i++,k++){
-            String[] splited1 = splited[i].split(":");
-            splited_aux[k] = splited1[1];
+        String[] s1 = s.split(",");                             //dividir o json em substrings que estavam separadas por vírgulas
+        String[] s2 = new String[4];                        
+        boolean result = true;
+        for(int i = 0, k = 0; i < s1.length; i++, k++){
+            String[] s3 = s1[i].split(":");                     //dividir a string anterior em subtrings com o valor após os ":"
+            s2[k] = s3[1];                                      //guardar na string s2 os valores do json
         }    
-        int serialNumber=Integer.parseInt(splited_aux[0]);
-        int deviceState=Integer.parseInt(splited_aux[1]);
-        int error=Integer.parseInt(splited_aux[2]);
-        int en_production=Integer.parseInt(splited_aux[3].substring(0,1));
-        System.out.println("CALLED INSERT STATE with serial:"+serialNumber+" and STATE:" + deviceState+" and error:" + error +" and en_production:" + en_production);
+        
+        System.out.println("EnergyProduction: " + s2[3].replace("}",""));
+        int serialNumber = Integer.parseInt(s2[0]);
+        int deviceState = Integer.parseInt(s2[1]);
+        int error = Integer.parseInt(s2[2]);
+        int energyProduction = Integer.parseInt(s2[3].replace("}","")); 
+        System.out.println("Serial Number: "  + serialNumber);
+        System.out.println("Device State: " + deviceState);
+        System.out.println("EnergyProduction: " + energyProduction);
+        
         try {
-            result = dbm.insertState(serialNumber, deviceState, error, en_production);
+            result = dbm.insertState(serialNumber, deviceState, error, energyProduction);
         } catch (ParseException ex) {
             Logger.getLogger(DeviceServerResource.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -53,8 +57,10 @@ public class DeviceServerResource extends ServerResource implements DeviceResour
 
     @Override
     public ArrayList<String> getDeviceStates() {
-        ArrayList<String> result = new ArrayList<String>();
-        return result;
+        String serialNumber = (String) (this.getRequest().getAttributes().get("serialNumber"));
+        ArrayList<String> DeviceState = new ArrayList<>();
+        DeviceState = dbm.getDeviceStates(serialNumber);
+        System.out.println(DeviceState);
+        return DeviceState;
     }
-
 }

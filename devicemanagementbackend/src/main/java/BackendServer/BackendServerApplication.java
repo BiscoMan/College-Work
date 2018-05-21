@@ -43,9 +43,10 @@ public class BackendServerApplication extends Application {
         router.attach("/createdb/", DatabaseServerResource.class);
         router.attach("/customer/", CustomerServerResource.class);
         router.attach("/customer/{username}", CustomerServerResource.class);
-        router.attach("/device/", DeviceServerResource.class);
         router.attach("/customerdevice/", CustomerDeviceServerResource.class);
         router.attach("/customerdevice/{username}", CustomerDeviceServerResource.class);
+        router.attach("/device/", DeviceServerResource.class);
+        router.attach("/device/{serialNumber}", DeviceServerResource.class);
         router.attach("/devicefriendlyname/", DeviceFriendlyNameServerResource.class);
         router.attach("/devicestates/", DeviceStatesServerResource.class);
         router.attach("/devicetype/", DeviceTypeServerResource.class);
