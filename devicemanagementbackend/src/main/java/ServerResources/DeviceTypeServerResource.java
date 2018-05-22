@@ -7,26 +7,28 @@ package ServerResources;
 
 import DatabaseManagement.DatabaseManagement;
 import Resources.DeviceTypeResource;
+
 import java.util.ArrayList;
+import java.util.Map;
+
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.ServerResource;
 
 /**
- *
  * @author gonca
  */
-public class DeviceTypeServerResource extends ServerResource implements DeviceTypeResource{
-     private DatabaseManagement dbm;
-     
-     @Override
+public class DeviceTypeServerResource extends ServerResource implements DeviceTypeResource {
+    private DatabaseManagement dbm;
+
+    @Override
     protected void doInit() throws ResourceException {
         this.dbm = (DatabaseManagement) getContext().getAttributes().get("DBM");
     }
-     
-     @Override
-     public ArrayList<String> getDeviceTypes(){
-         ArrayList<String> result = dbm.getDeviceTypes();
-         return result;
-     }
-    
+
+    @Override
+    public ArrayList<Map<String, String>> getDeviceTypes() {
+        ArrayList<Map<String, String>> result = dbm.getDeviceTypes();
+        return result;
+    }
+
 }

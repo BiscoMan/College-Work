@@ -9,9 +9,7 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Locale;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -176,7 +174,7 @@ public class DatabaseManagement {
             preparedStatement.setInt(1, serialNumber);
             preparedStatement.setString(2, userName);
             preparedStatement.setString(3, model);
-            preparedStatement.setString(4, friendlyName); 
+            preparedStatement.setString(4, friendlyName);
             preparedStatement.setInt(5, deviceType);
             preparedStatement.execute();
             closeConnection();
@@ -214,13 +212,16 @@ public class DatabaseManagement {
      This method returns all device's types
      Returns an ArrayList with structure: TYPE_UID/TYPE_DESCRIPTION
      */
-    public ArrayList<String> getDeviceTypes() {
+    public ArrayList<Map<String, String>> getDeviceTypes() {
         openConnection();
         try (ResultSet rs = statement.executeQuery("SELECT * FROM PUBLIC.TYPE")) {
-            ArrayList<String> myTypes = new ArrayList<>();
+            ArrayList<Map<String, String>> myTypes = new ArrayList<>();
             while (rs.next()) {
-                myTypes.add(rs.getString(1));
-                myTypes.add(rs.getString(2));
+                Map<String, String> object = new HashMap<>();
+                object.put("id", rs.getString(1));
+                object.put("name", rs.getString(2));
+
+                myTypes.add(object);
             }
             closeConnection();
             return myTypes;
@@ -235,7 +236,7 @@ public class DatabaseManagement {
      This method returns all possible states
      Returns an ArrayList with structure: STATE_UID/STATE_DESCRIPTION
      */
-    public ArrayList<String> getStates(){
+    public ArrayList<String> getStates() {
         openConnection();
         try (ResultSet rs = statement.executeQuery("SELECT * FROM PUBLIC.STATE")) {
             ArrayList<String> myProgramas = new ArrayList<>();
@@ -299,7 +300,7 @@ public class DatabaseManagement {
         closeConnection();
         return null;
     }
-    
+
     /*
      This method returns the states stored by all devices associated to the user
      Receives the userName

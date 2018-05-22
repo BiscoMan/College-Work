@@ -6,14 +6,15 @@
 package Resources;
 
 import java.util.ArrayList;
+import java.util.Map;
+
 import org.restlet.resource.Get;
 
 /**
- *
  * @author gonca
  */
 public interface DeviceTypeResource {
     @Get
-    public ArrayList<String> getDeviceTypes();
-    
+    public ArrayList<Map<String, String>> getDeviceTypes();
+
 }

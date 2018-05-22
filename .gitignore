@@ -1,0 +1,6 @@
+*.iml
+/devicemanagementbackend/target/
+/devicemanagementbackend/.idea/
+/devicemanagementbackend/database/
+/devicemanagementfrontend/.idea/
+/devicemanagementfrontend/node_modules/
